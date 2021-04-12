@@ -14,14 +14,11 @@ import java.net.InetSocketAddress;
 
 public class NettyServer {
     public static void main(String[] args) throws InterruptedException {
-
-        System.out.println();
-
         //创建服务器的启动对象
         final ServerBootstrap sb = new ServerBootstrap();
         // Configure the server.
         // 创建两个线程组，含有的子线程NioEventLoop个数默认为cpu核数的两倍
-        // bossGroup只是处理连接请求 ,真正的和客户端业务处理，会交给workerGroup完成
+        // bossGroup只是处理连接请求,真正的和客户端业务处理，会交给workerGroup完成
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup();
 
